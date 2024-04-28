@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import ProductCard from "./components/ProductCard";
+import { dummyProducts } from "./components/DummyData";
 export default function Home() {
   return (
     <>
@@ -25,13 +27,25 @@ export default function Home() {
       </section>
       <section>
         <div className="container py-12">
-          <Tabs defaultValue="Pizza" className="w-[400px]">
+          <Tabs defaultValue="Pizza" >
             <TabsList>
               <TabsTrigger value="Pizza" className="text-md">Pizza</TabsTrigger>
               <TabsTrigger value="Beverages" className="text-md">Beverages</TabsTrigger>
             </TabsList>
-            <TabsContent value="Pizza">Pizza khalo </TabsContent>
-            <TabsContent value="Beverages">Beverages mtt peena jukham hai.</TabsContent>
+            <TabsContent value="Pizza">
+              <div className="grid grid-cols-4 gap-6 mt-6">
+                {dummyProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="Beverages">
+              <div className="grid grid-cols-4 gap-6 mt-6">
+                {dummyProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </TabsContent>
           </Tabs>
         </div>
       </section>
