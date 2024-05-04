@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import ProductCard from "./components/ProductCard";
+import ProductCard from "./components/product-card";
 import { dummyProducts } from "./components/DummyData";
 export default function Home() {
   return (
